@@ -1,0 +1,19 @@
+"abh"
+{
+	"base"		"base"
+	"title"		"ABH"
+	"maps"		"^abh_"
+	"menusystem"	"1"
+	
+	"settings"
+	{
+		1
+		{
+			"name"		"abh_maxspeed"
+			"text"		"abh_maxspeed"
+			"help"		"Sets the maximum speed a player can reach when using ABH"
+			"type"		"Numeric"
+			"default"	"3500"
+		}
+	}
+}
