@@ -23,7 +23,7 @@ local PLAYER = {}
 
 -- Empty out player loadout
 function PLAYER:Loadout ()
-	self.Player:RemoveAllAmmo ()
+	self.Player:StripWeapons ()
 end
 
 local JUMPING
