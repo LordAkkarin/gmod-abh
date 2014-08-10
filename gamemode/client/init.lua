@@ -70,6 +70,26 @@ function GM:HUDPaint()
 	
 	-- draw UPS
 	self:DrawUPS ()
+	
+	-- draw team
+	self:DrawTeamName ()
+end
+
+--
+-- Draws the team name
+--
+function GM:DrawTeamName ()
+	-- get player
+	local ply = LocalPlayer ()
+	
+	-- check team
+	if ply:Team () == TEAM_SPECTATOR then
+		local colorA = Color (255, 255, 255, 80)
+		local colorB = Color (255, 255, 255, 150)
+	
+		draw.DrawText ("Spectating", "SpeedHeadlineGlow", 20, 20, colorA, TEXT_ALIGN_LEFT)
+		draw.DrawText ("Spectating", "SpeedHeadline", 20, 20, colorB, TEXT_ALIGN_LEFT)
+	end
 end
 
 --
@@ -108,6 +128,9 @@ function GM:DrawUPS ()
 	draw.DrawText (text, "Speed", x, (y - margin - 40), colorB, TEXT_ALIGN_CENTER)
 end
 
+--
+-- Disables health, suit and ammunition HUDs
+--
 function GM:HUDShouldDraw (name)
 	for k, v in pairs({"CHudHealth", "CHudBattery", "CHudAmmo", "CHudSecondaryAmmo", })do
 		if name == v then return false end

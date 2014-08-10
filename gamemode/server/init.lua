@@ -14,8 +14,6 @@
 -- limitations under the License.                                           --
 ------------------------------------------------------------------------------
 
--- TODO
-
 -- Set convars
 -- TODO: This is kinda dirty but there is currently no other way to set convars
 RunConsoleCommand ("sv_sticktoground", "0") -- Disable Garry's fun killer
@@ -28,4 +26,19 @@ RunConsoleCommand ("sv_maxvelocity", "100000") -- Ensure ABH feels right
 --
 function GM:GetFallDamage (ply, speed)
 	return 0
+end
+
+--
+-- Handles team switches
+--
+function GM:PlayerButtonDown (ply, btn)
+	if btn == 58 then
+		if ply:Team () == TEAM_SPECTATOR then
+			ply:SetTeam (TEAM_RUNNERS)
+			ply:Spawn ()
+		else
+			ply:SetTeam (TEAM_SPECTATOR)
+			GAMEMODE:PlayerSpawnAsSpectator (ply)
+		end
+	end
 end
