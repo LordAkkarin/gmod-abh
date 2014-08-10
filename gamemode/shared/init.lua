@@ -17,6 +17,9 @@
 -- Register Classes
 include ("player_class/player_abh.lua")
 
+-- constants
+TEAM_RUNNERS = 1
+
 -- Register gamemode baseclass
 DEFINE_BASECLASS ("gamemode_base")
 
@@ -35,9 +38,17 @@ function GM:PlayerSpawn (pl)
 	player_manager.SetPlayerClass (pl, "player_abh")
 	
 	-- disable collisions
+	pl:SetTeam (TEAM_RUNNERS)
 	pl:SetNoCollideWithTeammates (true)
-	pl:SetTeam (1)
+	pl:SetAvoidPlayers (false)
 	
 	-- call parent
 	BaseClass.PlayerSpawn (self, pl)
+end
+
+--
+-- Creates gamemode teams
+--
+function GM:CreateTeams ()
+	team.SetUp (TEAM_RUNNERS, "Runners", Color (0, 255, 0), true)
 end
