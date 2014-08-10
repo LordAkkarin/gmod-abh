@@ -16,13 +16,13 @@
 
 -- Client Logic
 AddCSLuaFile ("cl_init.lua") -- Required by gmod
-AddCSLuaFile ("client/init.lua")
 AddCSLuaFile ("shared/init.lua")
+AddCSLuaFile ("client/init.lua")
 AddCSLuaFile ("shared/player_class/player_abh.lua")
 
 -- Server logic
-include ("server/init.lua")
 include ("shared/init.lua")
+include ("server/init.lua")
 
 -- Load base
 DEFINE_BASECLASS( "gamemode_base" )
