@@ -24,5 +24,14 @@
 			"type"		"Checkbox"
 			"default"	"1"
 		}
+		
+		3
+		{
+			"name"		"abh_disablefalldamage"
+			"text"		"abh_disablefalldamage"
+			"help"		"Defines whether falldamage should be applied to players."
+			"type"		"Checkbox"
+			"default"	"0"
+		}
 	}
 }

@@ -29,7 +29,13 @@ if GetConVar ("abh_fixmaxvelocity"):GetBool () then RunConsoleCommand ("sv_maxve
 -- Disables fall damage
 --
 function GM:GetFallDamage (ply, speed)
-	return 0
+	if GetConVar ("abh_disablefalldamage"):GetBool () then
+		-- Disable fall damage completely
+		return 0
+	else
+		-- Return vanilla Half-Life 2 value
+		return (speed / 8)
+	end
 end
 
 --
