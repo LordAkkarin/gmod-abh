@@ -18,7 +18,6 @@
 -- TODO: This is kinda dirty but there is currently no other way to set convars
 RunConsoleCommand ("sv_sticktoground", "0") -- Disable Garry's fun killer
 RunConsoleCommand ("sv_gravity", "800") -- You may want to disable this depending on your map
-RunConsoleCommand ("sv_airaccelerate", "1500") -- Makes you fly like an eagle!
 RunConsoleCommand ("sv_maxvelocity", "100000") -- Ensure ABH feels right
 
 --
