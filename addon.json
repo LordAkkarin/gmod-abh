@@ -1,0 +1,9 @@
+{
+	"title"		:	"ABH",
+	"type"		:	"gamemode",
+	"tags"		:	[ "fun" ],
+	"ignore"	:	[
+		"LICENSE",
+		"icon.jpg"
+	]
+}
