@@ -15,10 +15,15 @@
 ------------------------------------------------------------------------------
 
 -- Set convars
--- TODO: This is kinda dirty but there is currently no other way to set convars
-RunConsoleCommand ("sv_sticktoground", "0") -- Disable Garry's fun killer
-RunConsoleCommand ("sv_gravity", "800") -- You may want to disable this depending on your map
-RunConsoleCommand ("sv_maxvelocity", "100000") -- Ensure ABH feels right
+
+-- Ensure that garry doesn't fuck us over
+RunConsoleCommand ("sv_sticktoground", "0")
+
+-- Fix gravity settings
+if GetConVar ("abh_fixgravity"):GetBool () then RunConsoleCommand ("sv_gravity", "800") end -- Fix gravity
+
+-- Ensure the max speed is close to Half_life 2's defaults (Note: Half-Life 2 uses 3500 however this seems to be slightly too slow for gmod)
+if GetConVar ("abh_fixmaxvelocity"):GetBool () then RunConsoleCommand ("sv_maxvelocity", "4000") end
 
 --
 -- Disables fall damage

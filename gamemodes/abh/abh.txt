@@ -9,11 +9,20 @@
 	{
 		1
 		{
-			"name"		"abh_maxspeed"
-			"text"		"abh_maxspeed"
-			"help"		"Sets the maximum speed a player can reach when using ABH"
-			"type"		"Numeric"
-			"default"	"3500"
+			"name"		"abh_fixgravity"
+			"text"		"abh_fixgravity"
+			"help"		"Defines whether the gamemode should overwrite gravity settings."
+			"type"		"Checkbox"
+			"default"	"1"
+		}
+		
+		2
+		{
+			"name"		"abh_fixmaxvelocity"
+			"text"		"abh_fixmaxvelocity"
+			"help"		"Defines whether the gamemode should overwrite max velocity settings."
+			"type"		"Checkbox"
+			"default"	"1"
 		}
 	}
 }
